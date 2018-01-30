@@ -1,0 +1,368 @@
+<!doctype><html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>The Handmade Jatha</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/x-icon" href="http://cartodb.github.io/odyssey.js/sandbox/favicon.png">
+  <link rel="icon" type="image/png" href="http://cartodb.github.io/odyssey.js/sandbox/favicon.png">
+
+  <link rel="stylesheet" href="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css">
+  <link rel="stylesheet" href="http://cartodb.github.io/odyssey.js/sandbox/css/scroll.css">
+  <script src="http://cartodb.github.io/odyssey.js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+  <div id="layout">
+    <!--<div class="progress-bar"></div>-->
+
+    <div class="inner-header">
+      <div id="header"></div>
+    </div>
+
+    <div id="map_pos">
+      <div id="map_container">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <div id="content"></div>
+
+    <div id="credits">
+      <span class="title" id="title">Title</span>
+      <span class="author"><b id="author">By Name for</b> <a href="http://thehandmade.in/">HandMade</a><span>
+    </span></span></div>
+  </div> <!-- layout -->
+
+  <script src="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/cartodb.js"></script>
+  <script src="http://cartodb.github.io/odyssey.js/dist/odyssey.js" charset="UTF-8"></script>
+
+  <script>
+    O.Template({
+      init: function() {
+        var baseurl = this.baseurl = 'https://{s}.tiles.mapbox.com/v3/openstreetmap.1b68f018/{z}/{x}/{y}.png';
+        var map = this.map = L.map('map',{
+          center: [0, 0],
+          zoom: 4
+        });
+
+        this.map.scrollWheelZoom.disable();
+
+        var basemap = this.basemap = L.tileLayer(baseurl, {
+          attribution: 'data OSM - map mapbox'
+        }).addTo(map);
+
+        var story = O.Story()
+
+        this.story = story;
+        this.miniprogressbar = O.MiniProgressBar();
+
+        // trigger when  map_pos go out of the screen
+        this.edge = O.Edge(
+          O.Triggers.Scroll().less('map_pos').offset(0),
+          O.Triggers.Scroll().greater('map_pos').offset(0)
+        )
+      },
+
+      update: function(actions) {
+        var self = this;
+
+        this.story.clear();
+
+        if (this.baseurl && (this.baseurl !== actions.global.baseurl)) {
+          this.baseurl = actions.global.baseurl || 'https://{s}.tiles.mapbox.com/v3/openstreetmap.1b68f018/{z}/{x}/{y}.png';
+
+          this.basemap.setUrl(this.baseurl);
+        }
+
+        if (this.cartoDBLayer && ("http://"+self.cartoDBLayer.options.user_name+".cartodb.com/api/v2/viz/"+self.cartoDBLayer.options.layer_definition.stat_tag+"/viz.json" !== actions.global.vizjson)) {
+          this.map.removeLayer(this.cartoDBLayer);
+
+          this.cartoDBLayer = null;
+          this.created = false;
+        }
+
+        if (actions.global.vizjson && !this.cartoDBLayer) {
+          if (!this.created) { // sendCode debounce < vis loader
+            cdb.vis.Loader.get(actions.global.vizjson, function(vizjson) {
+              self.map.fitBounds(vizjson.bounds);
+
+              cartodb.createLayer(self.map, vizjson)
+                .done(function(layer) {
+                  self.cartoDBLayer = layer;
+
+                  var sublayer = layer.getSubLayer(0),
+                      layer_name = layer.layers[0].options.layer_name,
+                      filter = actions.global.cartodb_filter ? " WHERE "+actions.global.cartodb_filter : "";
+
+                  sublayer.setSQL("SELECT * FROM "+layer_name+filter)
+
+                  self.map.addLayer(layer);
+
+                  self._resetActions(actions);
+                }).on('error', function(err) {
+                  console.log("some error occurred: " + err);
+                });
+            });
+
+            this.created = true;
+          }
+
+          return;
+        }
+
+        this._resetActions(actions);
+      },
+
+      _resetActions: function(actions) {
+        // update footer title and author
+        var title_ = actions.global.title === undefined ? '' : actions.global.title,
+            author_ = actions.global.author === undefined ? 'Using' : 'By '+actions.global.author+' using';
+
+        document.getElementById('title').innerHTML = title_;
+        document.getElementById('author').innerHTML = author_;
+        document.title = title_ + " | " + author_ +' Odyssey.js';
+
+        var TRIGGER_LINE = this.map.getSize().y + 50;
+        this.story.addEvent(
+          this.edge,
+          O.Parallel(
+            O.Actions.CSS($('#map_container')).toggleClass('attachTop'),
+            O.Actions.CSS($('#content')).toggleClass('attachMap'),
+            O.Actions.Debug().log('attach')
+          )
+        )
+
+        // create content
+        var content = '';
+
+        var slide_ = actions[0];
+        $('#header').html(slide_.html());
+
+        this.story
+          .addState(
+            O.Scroll().within($('#header')),
+            slide_(this)
+          );
+
+        for(var i = 1; i < actions.length; ++i) {
+          var slide = actions[i];
+          content += "<div id='s_" + i +"'>" + slide.html() + "</div>";
+        }
+
+        $('#content').html(content);
+
+        // first slide is the header, skip it
+        for(var i = 1; i < actions.length; ++i) {
+          var slide = actions[i];
+          this.story.addState(
+            O.Triggers.Scroll().within('s_' + i).offset(TRIGGER_LINE),
+            O.Parallel(
+              slide(this),
+              this.miniprogressbar.percent(100*i/(actions.length - 1))
+            )
+          )
+        }
+
+        if(window.scrollY === 0) {
+          this.story.go(0);
+        }
+      }
+    });
+  </script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-20934186-21', 'cartodb.github.io');
+    ga('send', 'pageview');
+  </script>
+
+
+<script id="md_template" type="text/template">```
+-title: "The Handmade Jatha"
+-author: "Thejesh GN"
+```
+
+#The Handmade Jatha
+```
+- center: [16.363133,76.420384]
+- zoom: 7
+L.marker([16.363133,76.420384]).actions.addRemove(S.map)
+```
+
+We will add more details about the walk, hashtags etc here. 
+
+#Where is Kodekal?
+```
+- center: [16.3631, 76.4204]
+- zoom: 12
+L.marker([16.3631, 76.4204]).actions.addRemove(S.map)
+```
+
+Kodekal is a small town in Yadgir dist in the present day Hyderabad-Karnataka
+region. This is the town where, in the fifteenth century, a second social
+revolution took place. The first one, called “Vachana Chaluvali”, happened
+even earlier in the twelfth century at Kalyana — 200 KM north of
+Kodekal. Vachana Chaluvali is a metaphor for, what can be called, the
+spirituality of the Hand. The movement had brought together all the
+hardworking and hand-making people. But then, in the ensuing three
+centuries, the priesthood had reaffirmed its supremacy. Kodekal movement
+was a Protestant offshoot. Kodekal Basavanna, the new avatar of the twelfth-
+century Basavanna, interestingly, was a Sufi as well. 
+
+The legend says that
+Basavanna decided to be born as Allah in his Kodekal Incarnation. Kodekal
+Basavanna broke the stranglehold of the priestly class, all over again,
+reaffirming the unity of all the hardworking and handmaking people. Kodekal
+town, thus, stands as a symbol of the unity of all the handmaking people. It
+also stands as a symbol for the unity of faith.
+
+
+
+#Jogandabhavi
+```
+- center: [16.295426,76.356354]
+- zoom: 12
+L.marker([16.295426,76.356354]).actions.addRemove(S.map)
+```
+
+
+#Jaavooru
+```
+- center: [16.188052,76.349144]
+- zoom: 12
+L.marker([16.188052,76.349144]).actions.addRemove(S.map)
+```
+
+
+#Sajjalagudda
+```
+- center: [16.072867,76.311722]
+- zoom: 12
+L.marker([16.072867,76.311722]).actions.addRemove(S.map)
+```
+
+
+#Kandagal
+```
+- center: [15.960009,76.265717]
+- zoom: 12
+L.marker([15.960009,76.265717]).actions.addRemove(S.map)
+```
+
+#Dotihaal
+```
+- center: [15.867562,76.201172]
+- zoom: 12
+L.marker([15.867562,76.201172]).actions.addRemove(S.map)
+```
+
+
+#Gumgeri
+```
+- center: [15.761858,76.250954]
+- zoom: 12
+L.marker([15.761858,76.250954]).actions.addRemove(S.map)
+```
+
+
+#Tavarageri
+```
+- center: [15.764501,76.406479]
+- zoom: 12
+L.marker([15.764501,76.406479]).actions.addRemove(S.map)
+```
+
+
+#Kanakagiri
+```
+- center: [15.571451,76.418838]
+- zoom: 12
+L.marker([15.571451,76.418838]).actions.addRemove(S.map)
+```
+
+
+#Gangavathi
+```
+- center: [15.432004,76.531191]
+- zoom: 12
+L.marker([15.432004,76.531191]).actions.addRemove(S.map)
+```
+
+
+
+#Hampi
+```
+- center: [15.334901,76.459951]
+- zoom: 12
+L.marker([15.334901,76.459951]).actions.addRemove(S.map)
+```
+
+
+
+
+#Hospet
+```
+- center: [15.269199,76.390772]
+- zoom: 12
+L.marker([15.269199,76.390772]).actions.addRemove(S.map)
+```
+
+
+
+#Mariyammanahalli
+```
+- center: [15.161282,76.36528]
+- zoom: 12
+L.marker([15.161282,76.36528]).actions.addRemove(S.map)
+```
+
+
+
+
+#Hampapattana
+```
+- center: [15.112647,76.27181]
+- zoom: 12
+L.marker([15.112647,76.27181]).actions.addRemove(S.map)
+```
+
+
+
+
+#Hagaribommanahalli
+```
+- center: [15.046928,76.207352]
+- zoom: 12
+L.marker([15.046928,76.207352]).actions.addRemove(S.map)
+```
+
+
+
+
+
+#Bennikal
+```
+- center: [14.956726,76.241684]
+- zoom: 12
+L.marker([14.956726,76.241684]).actions.addRemove(S.map)
+```
+
+
+
+
+
+#Kotturu
+```
+- center: [14.826664,76.221771]
+- zoom: 12
+L.marker([14.826664,76.221771]).actions.addRemove(S.map)
+```
+
+
+```
+</script></body></html>
