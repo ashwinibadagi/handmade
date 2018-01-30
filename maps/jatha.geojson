@@ -1,0 +1,527 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          76.420384,
+          16.363133,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Kodekal",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 1,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.356354,
+          16.295426,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Jogandabhavi",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 2,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.349144,
+          16.188052,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Jaavooru",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 3,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.311722,
+          16.072867,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Sajjalagudda",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 4,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.265717,
+          15.960009,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Kandagal",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 5,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.201172,
+          15.867562,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Dotihaal",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 6,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.250954,
+          15.761858,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Gumgeri",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 7,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.406479,
+          15.764501,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Tavarageri",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 8,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.418838,
+          15.571451,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Kanakagiri",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 9,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.531191,
+          15.432004,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Gangavathi",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 10,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.459951,
+          15.334901,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Hampi",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 11,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.390772,
+          15.269199,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Hospet",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 12,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.36528,
+          15.161282,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Mariyammanahalli",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 13,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.27181,
+          15.112647,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Hampapattana",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 14,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.207352,
+          15.046928,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Hagaribommanahalli",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 15,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.241684,
+          14.956726,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Bennikal",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 16,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          76.221771,
+          14.826664,
+          0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "Name": "Kotturu",
+        "altitudeMode": null,
+        "begin": null,
+        "description": 17,
+        "drawOrder": null,
+        "end": null,
+        "extrude": 0,
+        "icon": null,
+        "tessellate": -1,
+        "timestamp": null,
+        "visibility": -1
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            76.420384,
+            16.363133,
+            0
+          ],
+          [
+            76.356354,
+            16.295426,
+            0
+          ],
+          [
+            76.356354,
+            16.295426,
+            0
+          ],
+          [
+            76.349144,
+            16.188052,
+            0
+          ],
+          [
+            76.311722,
+            16.072867,
+            0
+          ],
+          [
+            76.265717,
+            15.960009,
+            0
+          ],
+          [
+            76.201172,
+            15.867562,
+            0
+          ],
+          [
+            76.250954,
+            15.761858,
+            0
+          ],
+          [
+            76.406479,
+            15.764501,
+            0
+          ],
+          [
+            76.418838,
+            15.571451,
+            0
+          ],
+          [
+            76.531191,
+            15.432004,
+            0
+          ],
+          [
+            76.531191,
+            15.432004,
+            0
+          ],
+          [
+            76.459951,
+            15.334901,
+            0
+          ],
+          [
+            76.459951,
+            15.334901,
+            0
+          ],
+          [
+            76.390772,
+            15.269199,
+            0
+          ],
+          [
+            76.36528,
+            15.161282,
+            0
+          ],
+          [
+            76.27181,
+            15.112647,
+            0
+          ],
+          [
+            76.207352,
+            15.046928,
+            0
+          ],
+          [
+            76.207352,
+            15.046928,
+            0
+          ],
+          [
+            76.241684,
+            14.956726,
+            0
+          ],
+          [
+            76.221771,
+            14.826664,
+            0
+          ]
+        ],
+        "type": "LineString"
+      },
+      "properties": {},
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}
