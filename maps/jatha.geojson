@@ -11,16 +11,7 @@
       },
       "properties": {
         "Name": "Kodekal",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 1,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 1
       },
       "type": "Feature"
     },
@@ -35,16 +26,7 @@
       },
       "properties": {
         "Name": "Jogandabhavi",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 2,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 2
       },
       "type": "Feature"
     },
@@ -59,16 +41,7 @@
       },
       "properties": {
         "Name": "Jaavooru",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 3,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 3
       },
       "type": "Feature"
     },
@@ -83,16 +56,7 @@
       },
       "properties": {
         "Name": "Sajjalagudda",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 4,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 4
       },
       "type": "Feature"
     },
@@ -107,16 +71,7 @@
       },
       "properties": {
         "Name": "Kandagal",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 5,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 5
       },
       "type": "Feature"
     },
@@ -131,16 +86,7 @@
       },
       "properties": {
         "Name": "Dotihaal",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 6,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 6
       },
       "type": "Feature"
     },
@@ -155,16 +101,7 @@
       },
       "properties": {
         "Name": "Gumgeri",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 7,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 7
       },
       "type": "Feature"
     },
@@ -179,16 +116,7 @@
       },
       "properties": {
         "Name": "Tavarageri",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 8,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 8
       },
       "type": "Feature"
     },
@@ -203,16 +131,7 @@
       },
       "properties": {
         "Name": "Kanakagiri",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 9,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 9
       },
       "type": "Feature"
     },
@@ -227,16 +146,7 @@
       },
       "properties": {
         "Name": "Gangavathi",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 10,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 10
       },
       "type": "Feature"
     },
@@ -251,16 +161,7 @@
       },
       "properties": {
         "Name": "Hampi",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 11,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 11
       },
       "type": "Feature"
     },
@@ -275,16 +176,7 @@
       },
       "properties": {
         "Name": "Hospet",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 12,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 12
       },
       "type": "Feature"
     },
@@ -299,16 +191,7 @@
       },
       "properties": {
         "Name": "Mariyammanahalli",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 13,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 13
       },
       "type": "Feature"
     },
@@ -323,16 +206,7 @@
       },
       "properties": {
         "Name": "Hampapattana",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 14,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 14
       },
       "type": "Feature"
     },
@@ -347,16 +221,7 @@
       },
       "properties": {
         "Name": "Hagaribommanahalli",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 15,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 15
       },
       "type": "Feature"
     },
@@ -371,16 +236,7 @@
       },
       "properties": {
         "Name": "Bennikal",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 16,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 16
       },
       "type": "Feature"
     },
@@ -395,16 +251,7 @@
       },
       "properties": {
         "Name": "Kotturu",
-        "altitudeMode": null,
-        "begin": null,
-        "description": 17,
-        "drawOrder": null,
-        "end": null,
-        "extrude": 0,
-        "icon": null,
-        "tessellate": -1,
-        "timestamp": null,
-        "visibility": -1
+        "description": 17
       },
       "type": "Feature"
     },
